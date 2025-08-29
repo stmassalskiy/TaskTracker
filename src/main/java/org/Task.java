@@ -63,6 +63,7 @@ public class Task {
 
     public void setTitle(String title) {
         this.title = title;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public String getDescription() {
@@ -71,6 +72,7 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public Status getStatus() {
@@ -79,6 +81,10 @@ public class Task {
 
     public void setStatus(Status status) {
         this.status = status;
+        this.updatedAt = LocalDateTime.now();
+        if(status==Status.COMPLETED){
+            this.completedAt = LocalDateTime.now();
+        }
     }
 
     public Priority getPriority() {
@@ -87,6 +93,7 @@ public class Task {
 
     public void setPriority(Priority priority) {
         this.priority = priority;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public LocalDateTime getCreatedAt() {
@@ -111,6 +118,7 @@ public class Task {
 
     public void setDueAt(LocalDateTime dueAt) {
         this.dueAt = dueAt;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public LocalDateTime getCompletedAt() {
@@ -135,6 +143,7 @@ public class Task {
 
     public void setAssignedTo(User assignedTo) {
         this.assignedTo = assignedTo;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public Project getProject() {
@@ -151,6 +160,7 @@ public class Task {
 
     public void setEstimatedTime(int estimatedTime) {
         this.estimatedTime = estimatedTime;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public int getSpentTime() {
@@ -159,6 +169,7 @@ public class Task {
 
     public void setSpentTime(int spentTime) {
         this.spentTime = spentTime;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public List<Tag> getTags() {
